@@ -53,7 +53,8 @@ public class Calculator {
 	 * @return: the result of the division.
 	 * */
 	public double divide(double firstNumber, double secondNumber){
-		return firstNumber/secondNumber;
+		return  firstNumber/secondNumber;
+		
 	}
 	
 	
