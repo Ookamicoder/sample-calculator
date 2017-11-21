@@ -446,5 +446,39 @@ public class CalculatorTest {
 			
 		}
 	}
+	
+	@Test
+	public void testDivideMediumNegativeNumbers() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+		
+		for(int i = 0;i<200;i++) {
+			firstNumber = Double.valueOf(df.format(random.nextDouble()*-100));
+			secondNumber = Double.valueOf(df.format(random.nextDouble()*-100));
+			result = firstNumber / secondNumber;
+			
+			LOG.info("Testing the method with: "+ firstNumber +" and " + secondNumber);
+			assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result),1);
+			
+		}
+	}
+	
+	@Test
+	public void testDivideLargeNegativeNumbers() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+		
+		for(int i = 0;i<200;i++) {
+			firstNumber = Double.valueOf(df.format(random.nextDouble()*-1000));
+			secondNumber = Double.valueOf(df.format(random.nextDouble()*-1000));
+			result = firstNumber / secondNumber;
+			
+			LOG.info("Testing the method with: "+ firstNumber +" and " + secondNumber);
+			assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result),1);
+			
+		}
+	}
 
 }
